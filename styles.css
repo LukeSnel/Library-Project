@@ -78,15 +78,16 @@ li {
     text-decoration: none;
 }
 
-.btn__menu {
+.btn__menu{
     background-color: transparent;
-    font-size: 40px;
+    font-size: 48px;
     text-align: center;
     border: none;
     color: #7342d6;
+    display: none;
 }
 
-.menu__backdrop {
+.menu__background  {
     position: absolute;
     background-color: #242424;
     top: 0;
@@ -94,30 +95,37 @@ li {
     right: 0;
     bottom: 0;
     z-index: 100;
-    /* display: flex; */
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
 }
 
-.menu__open .menu__backdrop {
-    display: flex;
-}
-
-.menu__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.menu--open .menu__background {
+    visibility: visible;
+    opacity: 1;
 }
 
 .menu__list {
-    padding: 32px 0;
+    font-size: 48px;
+    padding: 48px 0;
 }
 
 .menu__link {
-    font-size: 48px;
     color: white;
+    
 }
+
+
+.menu__links {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
 
 .btn__menu--close {
     position: absolute;
@@ -126,6 +134,8 @@ li {
     padding: 8px;
     color: white;
 }
+
+
 
 /* landing */
 
@@ -249,7 +259,7 @@ margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
 }
 
 .highlight__para {
@@ -413,6 +423,7 @@ color: #bfbfbf;
 }
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+
 @media (max-width: 768px) {
     .header__description {
         padding: 0 24px;
@@ -427,18 +438,17 @@ color: #bfbfbf;
     }
 
     button {
-        font-size: 18px;
+        font-size: 16px;
     }
 
-    .books {
+    .book {
         width: 50%;
     }
 }
 
 
+/* SMALL PHONES, LARGE SMARTPHONES */
 
-
-/* small phones large smartphones */
 @media (max-width: 550px) {
     .nav__links {
         display: none;
@@ -450,6 +460,7 @@ color: #bfbfbf;
 
     .highlight {
         width: 100%;
+        margin-bottom: 24px;
     }
 
     .highlight:not(:last-child) {
