@@ -108,6 +108,11 @@ li {
     opacity: 1;
 }
 
+.menu--open {
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
 .menu__list {
     font-size: 48px;
     padding: 48px 0;
